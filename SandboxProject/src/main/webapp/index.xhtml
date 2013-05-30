@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:p="http://primefaces.org/ui">
+
+<body>
+<ui:composition template="/templates/template.xhtml">
+
+    <ui:define name="title">RichFaces Sample</ui:define>
+
+    <ui:define name="body">
+        <h:form prependId="false">
+        	<p:growl id="growl" sticky="true" showDetail="true"/>
+        	
+ 			<p:panel id="panel" header="Primefaces - Panel">
+ 				<p:panelGrid>
+ 					<f:facet name="header"></f:facet>
+					<p:inputText id="name"
+						value="#{testController.workingPerson.name}" required="true" label="Firstname">
+						<f:validateLength minimum="1"/>
+	            	</p:inputText>
+	            	<p:message for="name"/>
+	            	
+	            	<p:inputText id="lastName"
+						value="#{testController.workingPerson.lastName}" required="true" label="Lastname">
+						<f:validateLength minimum="1"/>
+	            	</p:inputText>
+	            	<p:message for="lastName"/>
+            	</p:panelGrid>
+ 			</p:panel>
+ 			
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
+</html>
